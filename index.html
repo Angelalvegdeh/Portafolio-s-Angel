@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculadora</title>
+    <!-- CSS en la raíz -->
     <link rel="stylesheet" href="estiloscalc.css">
 </head>
 
@@ -18,7 +19,6 @@
             <button class="boton boton-especial" onclick="agregarOperador('%')">%</button>
             <button class="boton boton-operador" onclick="agregarOperador('/')">÷</button>
 
-
             <!-- Fila 2 -->
             <button class="boton" onclick="agregaNumero('7')">7</button>
             <button class="boton" onclick="agregaNumero('8')">8</button>
@@ -26,11 +26,10 @@
             <button class="boton boton-operador" onclick="agregarOperador('*')">x</button>
 
             <!-- Fila 3 -->
-
             <button class="boton" onclick="agregaNumero('4')">4</button>
             <button class="boton" onclick="agregaNumero('5')">5</button>
             <button class="boton" onclick="agregaNumero('6')">6</button>
-            <button class="boton boton-operador" onclick="agregarOperador('-')">–</button>
+            <button class="boton boton-operador" onclick="agregarOperador('-')">-</button>
 
             <!-- Fila 4 -->
             <button class="boton" onclick="agregaNumero('1')">1</button>
@@ -42,13 +41,11 @@
             <button class="boton boton-cero" onclick="agregaNumero('0')">0</button>
             <button class="boton" onclick="agregaDecimal()">.</button>
             <button class="boton boton-operador" onclick="calcular()">=</button>
-
-
         </div>
     </div>
-    <!-- Enlaza el archivo JS -->
+
+    <!-- JS en la raíz -->
     <script src="script.js"></script>
 </body>
-
 
 </html>
