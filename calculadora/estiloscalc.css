@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Fuente */
+    font-family: Arial, sans-serif;
+    /* Color de la pagina */
+    background-color: #121212;
+    display: flex;
+    /* Para donde estara ubicado el contenido */
+    justify-content: center;
+    /* Para alinear los items a l centro */
+    align-items: center;
+    /* minimo de altura */
+    min-height: 100vh;
+    /* Espacio entre los bordes */
+    padding: 20px;
+}
+
+.calculadora {
+    /* El color de fondo de la calculadora */
+    background-color: rgb(43, 42, 41);
+    /* Hace que la calculadora tenga bordes redondos */
+    border-radius: 20px;
+    /* Espacio entre el elemento y el borde */
+    padding: 20px;
+    /* Sombra a la caja */
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+    /* Ancho fijo */
+    width: 100%;
+    /* Ancho maximo */
+    max-width: 320px;
+}
+.pantalla {
+    /* El color de fondo de la pantalla */
+    background-color: #6e6e6e;
+    color: #1E1E1E;
+    font-size: 28px;
+    font-weight: bold;
+    /* Alinea a la derecha */
+    text-align: right;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    min-height: 80px;
+    /* Como se muestra el elemento */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* Hace que si una palabra es muy larga,
+     se rompa y no se desborde fuera del contenedor */
+    word-wrap: break-word;
+    /* Hace que rompa la palabra, pero no respeta que acabe la palabra. Ej: Hola soy un estud
+    iante */
+    word-break: break-all;
+    /* Hace que si el contenido de un elemento es mas grande que el contenedor lo oculte lo sobrante */
+    overflow: hidden;
+}
+
+.botones {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+
+.boton {
+    background-color: rgb(98, 95, 99);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 20px;
+    /* Cambia la forma de cursor */
+    cursor: pointer;
+    
+    transition: all 0.2s ease;
+    /* Se usa para evitar que el texto sea seleccionado con none */
+    user-select: none;
+}
+.boton:hover {
+    background-color: rgb(19, 224, 36);
+    transform: scale(.8);
+}
+.boton:active {
+    transform: sacle(0.95);
+}
+.boton-operador {
+    background-color: rgb(153, 153, 153);
+}
+.boton-operador:hover {
+    background-color: rgb(49, 51, 204);
+}
+.boton-especial {
+    background-color: rgb(187, 187, 187);
+}
+.boton-especial:hover {
+    background-color: rgb(58, 63, 61);
+}
+/* Hace que el boton 0 ocupe 2 espacios */
+.boton-cero {
+    grid-column: span 2;
+}
+@keyframes pulsar {
+    0% {
+        transform: sclae (1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulsar {
+    animation: pulsar 0.1s ease-in-out;
+}
+/* Hace que la hoja se adapte a pantallas pequeñas */
+@media (max-width: 400px) {
+    .calculadora {
+        padding: 15px;
+    }
+    .boton {
+        padding: 15px;
+        font-size: 18px;
+    }
+    .pantalla {
+        font-size: 24px;
+        padding: 15px;
+        min-height: 60px;
+    }
+}
